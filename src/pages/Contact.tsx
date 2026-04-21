@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Phone, Send, MessageSquare, Clock, Globe } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, MessageSquare, Clock, Globe, Loader2 } from 'lucide-react';
 import { motion } from 'motion/react';
+import { db } from '../lib/firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -10,10 +13,24 @@ export default function Contact() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Thank you for your message! We will get back to you shortly.');
-    setFormData({ name: '', email: '', service: 'General Inquiry', message: '' });
+    setIsSubmitting(true);
+    
+    try {
+      await addDoc(collection(db, 'contactSubmissions'), {
+        ...formData,
+        createdAt: serverTimestamp()
+      });
+      
+      alert('Thank you for your message! We will get back to you shortly.');
+      setFormData({ name: '', email: '', service: 'General Inquiry', message: '' });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Something went wrong. Please try again later or contact us via WhatsApp.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -143,10 +160,20 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full bg-brand-primary text-white py-5 rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-xl shadow-brand-primary/20 flex items-center justify-center gap-3"
+                disabled={isSubmitting}
+                className="w-full bg-brand-primary text-white py-5 rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-xl shadow-brand-primary/20 flex items-center justify-center gap-3 disabled:bg-slate-400 disabled:cursor-not-allowed"
               >
-                Send Message
-                <Send className="w-5 h-5" />
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    <Send className="w-5 h-5" />
+                  </>
+                )}
               </button>
             </form>
           </div>
