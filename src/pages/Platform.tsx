@@ -40,16 +40,17 @@ export default function Platform() {
         
         <div className="section-padding relative z-10 grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-accent/20 text-brand-accent text-sm font-semibold border border-brand-accent/30">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-600/20 text-orange-500 text-sm font-semibold border border-orange-500/30">
               <Zap className="w-4 h-4" />
-              <span>Proprietary Technology</span>
+              <span>Proprietary Technology Stack</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-display font-bold leading-tight">
-              JJMS Innovation <br />
-              <span className="text-brand-accent text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-cyan-400">Management Platform</span>
+            <h1 className="text-6xl md:text-8xl font-display font-bold leading-[0.9] tracking-tighter">
+              Innovation <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-300 italic">Management</span> <br />
+              Platform.
             </h1>
             <p className="text-xl text-slate-400 max-w-xl leading-relaxed">
-              A scalable, AI-powered solution designed for innovation programmes, incubators, and government institutions to manage and track impact.
+              A scalable, AI-powered mission control for regional innovation programmes, incubators, and government institutions.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -136,29 +137,33 @@ export default function Platform() {
               </Link>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-6">
-            <div className="space-y-6">
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
-                <BarChart className="w-10 h-10 text-brand-accent mb-4" />
-                <p className="text-3xl font-bold text-slate-900">85%</p>
-                <p className="text-sm text-slate-500">Efficiency Increase</p>
-              </div>
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
-                <Users className="w-10 h-10 text-emerald-500 mb-4" />
-                <p className="text-3xl font-bold text-slate-900">500+</p>
-                <p className="text-sm text-slate-500">Innovators Tracked</p>
+          <div className="grid grid-cols-2 bg-slate-900 border border-slate-700 rounded-[2rem] overflow-hidden">
+            <div className="p-8 md:p-12 border-r border-b border-slate-700 space-y-4 hover:bg-white/5 transition-colors group">
+              <BarChart className="w-8 h-8 text-orange-500 group-hover:scale-110 transition-transform" />
+              <div>
+                <p className="text-4xl md:text-5xl font-display font-bold text-white">85%</p>
+                <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">Efficiency Increase</p>
               </div>
             </div>
-            <div className="pt-12 space-y-6">
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
-                <Globe className="w-10 h-10 text-purple-500 mb-4" />
-                <p className="text-3xl font-bold text-slate-900">100%</p>
-                <p className="text-sm text-slate-500">Cloud Based</p>
+            <div className="p-8 md:p-12 border-b border-slate-700 space-y-4 hover:bg-white/5 transition-colors group">
+              <Users className="w-8 h-8 text-emerald-500 group-hover:scale-110 transition-transform" />
+              <div>
+                <p className="text-4xl md:text-5xl font-display font-bold text-white">500+</p>
+                <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">Innovators Tracked</p>
               </div>
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
-                <Shield className="w-10 h-10 text-amber-500 mb-4" />
-                <p className="text-3xl font-bold text-slate-900">Secure</p>
-                <p className="text-sm text-slate-500">Enterprise Grade</p>
+            </div>
+            <div className="p-8 md:p-12 border-r border-slate-700 space-y-4 hover:bg-white/5 transition-colors group">
+              <Globe className="w-8 h-8 text-purple-500 group-hover:scale-110 transition-transform" />
+              <div>
+                <p className="text-4xl md:text-5xl font-display font-bold text-white">100%</p>
+                <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">Cloud Based</p>
+              </div>
+            </div>
+            <div className="p-8 md:p-12 space-y-4 hover:bg-white/5 transition-colors group">
+              <Shield className="w-8 h-8 text-amber-500 group-hover:scale-110 transition-transform" />
+              <div>
+                <p className="text-4xl md:text-5xl font-display font-bold text-white">AES-256</p>
+                <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">Encryption Standard</p>
               </div>
             </div>
           </div>

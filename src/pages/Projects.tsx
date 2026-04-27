@@ -43,6 +43,15 @@ const projects = [
     tags: ['E-commerce', 'Hosting'],
     year: '2023'
   },
+  {
+    id: 5,
+    title: 'AI-Powered Crop Monitoring',
+    category: 'Innovation',
+    desc: 'Collaborated with agricultural tech firms to implement AI-driven computer vision for early pest detection in vineyards.',
+    image: 'https://picsum.photos/seed/agri-ai/800/600',
+    tags: ['AI', 'Agri-Tech', 'Innovation'],
+    year: '2024'
+  },
 ];
 
 export default function Projects() {

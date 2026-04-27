@@ -333,6 +333,71 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Technology Stack Section */}
+      <section className="py-24 bg-white border-y border-slate-100">
+        <div className="section-padding">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-sm font-bold text-orange-600 uppercase tracking-widest">Our Tech Stack</h2>
+            <h3 className="text-3xl md:text-5xl font-display font-bold text-slate-900">Built with future-ready technology</h3>
+          </div>
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
+            {['React', 'TypeScript', 'Tailwind CSS', 'Firebase', 'Python', 'AI/LLMs', 'CAD/CAM', 'IoT'].map((tech) => (
+              <div key={tech} className="flex items-center gap-2 group">
+                <div className="w-2 h-2 bg-orange-600 rounded-full group-hover:scale-150 transition-transform" />
+                <span className="text-xl md:text-2xl font-display font-bold text-slate-900">{tech}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Insights Section */}
+      <section className="py-32 bg-slate-50">
+        <div className="section-padding">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
+            <div className="space-y-4">
+              <h2 className="text-sm font-bold text-orange-600 uppercase tracking-widest">Innovation Hub</h2>
+              <h3 className="text-4xl md:text-6xl font-display font-bold text-slate-900">Latest Tech Insights</h3>
+            </div>
+            <Link to="/insights" className="group inline-flex items-center gap-2 text-lg font-bold text-slate-900">
+              View All Insights 
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                title: 'The Future of 3D Printing in the NC',
+                category: 'Technology',
+                desc: 'How rapid prototyping is transforming local manufacturing in Upington.',
+                image: 'https://picsum.photos/seed/tech-insight-1/800/600'
+              },
+              {
+                title: 'AI in Governance & Automation',
+                category: 'Innovation',
+                desc: 'Exploring efficient service delivery through digital transformation.',
+                image: 'https://picsum.photos/seed/tech-insight-2/800/600'
+              }
+            ].map((insight, idx) => (
+              <Link to="/insights" key={insight.title} className="group relative aspect-[16/9] rounded-[3rem] overflow-hidden">
+                <img 
+                  src={insight.image} 
+                  alt={insight.title} 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-10 flex flex-col justify-end">
+                  <span className="text-orange-500 text-xs font-bold uppercase tracking-widest mb-2">{insight.category}</span>
+                  <h4 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">{insight.title}</h4>
+                  <p className="text-white/70 text-sm max-w-md">{insight.desc}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Final High-Impact CTA */}
       <section className="py-24">
         <div className="section-padding">

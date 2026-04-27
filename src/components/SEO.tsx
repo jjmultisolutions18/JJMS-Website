@@ -7,6 +7,7 @@ const pageTitles: Record<string, string> = {
   '/services': 'ICT, Prototyping & Web Services Upington | JJ Multi Solutions',
   '/platform': 'Innovation Management Software SA | JJ Multi Solutions',
   '/projects': 'Innovation Portfolio Northern Cape | JJ Multi Solutions',
+  '/insights': 'Tech Insights & Innovation Hub | JJ Multi Solutions',
   '/gallery': 'Gallery | 3D Printing & Tech Workshops',
   '/contact': 'Request a Quote | Web Design Upington',
 };

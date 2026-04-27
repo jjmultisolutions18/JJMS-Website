@@ -12,6 +12,7 @@ import Services from './pages/Services';
 import Platform from './pages/Platform';
 import Projects from './pages/Projects';
 import Gallery from './pages/Gallery';
+import Insights from './pages/Insights';
 import Contact from './pages/Contact';
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="/platform" element={<Layout><Platform /></Layout>} />
         <Route path="/projects" element={<Layout><Projects /></Layout>} />
         <Route path="/gallery" element={<Layout><Gallery /></Layout>} />
+        <Route path="/insights" element={<Layout><Insights /></Layout>} />
         <Route path="/contact" element={<Layout><Contact /></Layout>} />
       </Routes>
     </Router>
